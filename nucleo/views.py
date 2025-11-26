@@ -1,12 +1,16 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def hola_mundo(request):
-    """
-    Una vista simple que retorna un saludo en HTML.
-    """
-    html_content = """
-    <div style='font-family: sans-serif; text-align: center; padding-top: 50px;'>
-        <h1>Bienvenidos a Incognita <br>>:)</h1>
-    </div>
-    """
-    return HttpResponse(html_content)
+def login_view(request):
+    return render(request, 'login.html')
+
+def creadores_view(request):
+    return render(request, 'creadores.html')
+
+def principal_view(request):
+    return render(request, 'principal.html')
+
+def dashboard_view(request):
+    return render(request, 'dashboard.html')
+
+def navbar_view(request):
+    return render(request, 'navbar.html')
