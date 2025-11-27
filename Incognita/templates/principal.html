@@ -1,4 +1,11 @@
-/* Paleta: verde hoja (#2FA84F) y blanco (#ffffff) */
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incógnita</title>
+<style>
+  /* Paleta: verde hoja (#2FA84F) y blanco (#ffffff) */
 :root{
   --leaf: #2FA84F;
   --leaf-dark: #238a3f;
@@ -133,3 +140,50 @@ body{
   color:var(--muted);
   padding:12px;
 }
+</style>
+</head>
+<body>
+  <main class="site">
+    {% include 'navbar.html' %}
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="title">Bienvenido a Incógnita</h1>
+        <p class="subtitle">Diseño limpio, fresco y profesional para tu sitio web.</p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="leaf"></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="servicios" class="features">
+      <article class="card">
+        <h3>Diseño Moderno</h3>
+        <p>Interfaz clara y agradable, pensada para usabilidad.</p>
+      </article>
+
+      <article class="card">
+        <h3>Rendimiento</h3>
+        <p>Carga rápida y optimización para móviles y escritorio.</p>
+      </article>
+
+      <article class="card">
+        <h3>Accesibilidad</h3>
+        <p>Estructura inclusiva y semántica bien construida.</p>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Incógnita · Todos los derechos reservados</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

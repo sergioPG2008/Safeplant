@@ -1,0 +1,64 @@
+<style>
+    .nav-container {
+        background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        width: 100%;
+    }
+
+    .nav-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: white;
+        letter-spacing: -0.025em;
+    }
+
+    .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    .nav-button {
+        padding: 0.75rem 1.5rem;
+        background-color: white;
+        color: #059669;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+        background-color: #f0fdf4;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<nav class="nav-container">
+    <div class="nav-wrapper">
+        <div class="logo">
+            incógnita
+        </div>
+        <ul class="nav-buttons">
+            <li><a href="{% url 'principal' %}" class="nav-button">Principal</a></li>
+            <li><a href="{% url 'login' %}" class="nav-button">Login</a></li>
+            <li><a href="{% url 'creadores' %}" class="nav-button">Creadores</a></li>
+            <li><a href="{% url 'dashboard' %}" class="nav-button">Dashboard</a></li>
+        </ul>
+    </div>
+</nav>

@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -52,10 +53,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Incognita.urls'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'Incognita' / 'static'  # si la carpeta static está dentro de la app
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "Incognita" / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
