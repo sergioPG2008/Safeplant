@@ -1,76 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Presentación</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
-
-        /* Contenedor general del login */
-        .main-login-wrapper {
+        .slider-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: calc(100vh - 80px); /* deja espacio para el navbar */
-            padding-top: 20px;
+            justify-content: center;
+            margin-top: 30px;
         }
 
-        .login-container {
-            background: #fff;
-            width: 350px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .slider-img {
+            max-width: 90%;
+            width: 720px;   /* 400px × 1.8 */
+            height: auto;
             border-radius: 8px;
-        }
-
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #333;
-        }
-
-        .login-container input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 15px;
-        }
-
-        .login-container button {
-            width: 100%;
-            padding: 12px;
-            background: #007bff;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .login-container button:hover {
-            background: #0056b3;
+        .slider-img:hover {
+            transform: scale(1.03);
         }
 
-        .login-container a {
-            display: block;
-            text-align: center;
-            margin-top: 12px;
-            color: #007bff;
-            text-decoration: none;
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 20px;
         }
 
-        .login-container a:hover {
-            text-decoration: underline;
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -79,20 +54,49 @@
 
     {% include 'navbar.html' %}
 
-    <div class="main-login-wrapper">
-        <div class="login-container">
-            <h2>Iniciar Sesión</h2>
+    <div class="slider-container">
 
-            <form method="POST">
-                {% csrf_token %}
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit">Entrar</button>
-            </form>
+        <!-- Imagen visible -->
+        <img id="slider-img" class="slider-img"
+             src="{% static 'assistance/Pre1.png' %}" onclick="nextImage()">
 
-            <a href="#">¿Olvidaste tu contraseña?</a>
+        <!-- Botones -->
+        <div class="controls">
+            <button class="btn" onclick="prevImage()">⟵ Anterior</button>
+            <button class="btn" onclick="nextImage()">Siguiente ⟶</button>
         </div>
+
     </div>
+
+    <script>
+        // Lista de imágenes
+        const images = [
+            "{% static 'assistance/Pre1.png' %}",
+            "{% static 'assistance/Pre2.png' %}",
+            "{% static 'assistance/Pre3.png' %}",
+            "{% static 'assistance/Pre4.png' %}",
+            "{% static 'assistance/Pre5.png' %}",
+            "{% static 'assistance/Pre6.png' %}",
+            "{% static 'assistance/Pre7.png' %}",
+            "{% static 'assistance/Pre8.png' %}"
+        ];
+
+        let index = 0;
+
+        function showImage() {
+            document.getElementById("slider-img").src = images[index];
+        }
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage();
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage();
+        }
+    </script>
 
 </body>
 </html>

@@ -3,129 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Verde</title>
+<title>Video Tutorial</title>
 <style>
-    :root {
-        --verde-hoja: #4CAF50;
-        --verde-hoja-oscuro: #3e8e41;
-        --blanco: #ffffff;
-        --gris-claro: #f4f4f4;
-        --gris-texto: #555;
-    }
-
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: var(--gris-claro);
-    }
-
-    /* Barra lateral */
-    .sidebar {
-        width: 230px;
-        height: 100vh;
-        background: var(--verde-hoja);
-        color: var(--blanco);
-        position: fixed;
-        padding: 20px 0;
-    }
-
-    .sidebar h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .sidebar a {
-        display: block;
-        padding: 15px 25px;
-        color: var(--blanco);
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .sidebar a:hover {
-        background: var(--verde-hoja-oscuro);
-    }
-
-    /* Contenido principal */
-    .main {
-        margin-left: 230px;
-        padding: 20px;
-    }
-
-    .header {
-        background: var(--blanco);
-        padding: 15px 25px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header h1 {
-        margin: 0;
-        color: var(--verde-hoja);
-    }
-
-    /* Tarjetas */
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        background: var(--blanco);
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-        margin: 0 0 10px;
-        color: var(--verde-hoja);
-    }
-
-    .card p {
-        color: var(--gris-texto);
+    /* Estilos para centrar el video y agregar padding arriba */
+    .video-container {
+        display: flex;          /* Para centrar horizontalmente */
+        justify-content: center;
+        padding-top: 50px;      /* Espacio arriba del video */
     }
 </style>
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="sidebar">
-        <h2>Dashboard</h2>
-        <a href="#">Inicio</a>
-        <a href="#">Reportes</a>
-        <a href="#">Usuarios</a>
-        <a href="#">Ajustes</a>
-    </div>
+    {% load static %}
 
-    <div class="main">
-        <div class="header">
-            <h1>Resumen General</h1>
-            <span>Usuario Admin</span>
-        </div>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Ventas</h3>
-                <p>$12,450 este mes</p>
-            </div>
-            <div class="card">
-                <h3>Usuarios Nuevos</h3>
-                <p>340 registrados</p>
-            </div>
-            <div class="card">
-                <h3>Pedidos</h3>
-                <p>89 pendientes</p>
-            </div>
-            <div class="card">
-                <h3>Soporte</h3>
-                <p>15 tickets abiertos</p>
-            </div>
-        </div>
+    <div class="video-container">
+        <video width="640" controls>
+            <source src="{% static 'assistance/VideoPrueba.mp4' %}" type="video/mp4">
+        </video>
     </div>
 
 </body>

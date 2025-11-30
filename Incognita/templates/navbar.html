@@ -1,64 +1,70 @@
 <style>
-    .nav-container {
-        background: linear-gradient(90deg, #059669 0%, #10b981 100%);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        width: 100%;
-    }
+/* Contenedor del navbar */
+.nav-container {
+    background: linear-gradient(90deg, #1e1e2f 0%, #2c2c3e 100%); /* tonos oscuros tipo editor de código */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    width: 100%;
+}
 
-    .nav-wrapper {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 80px;
-    }
+/* Wrapper interno para centrar contenido */
+.nav-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
 
-    .logo {
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: white;
-        letter-spacing: -0.025em;
-    }
+/* Logo */
+.logo {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #00ffcc; /* color neón cyan tipo terminal */
+    letter-spacing: -0.025em;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+}
 
-    .nav-buttons {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        list-style: none;
-    }
+/* Lista de botones */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
 
-    .nav-button {
-        padding: 0.75rem 1.5rem;
-        background-color: white;
-        color: #059669;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        text-decoration: none;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
+/* Botones */
+.nav-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #28293d; /* gris oscuro */
+    color: #ff79c6; /* rosa neón */
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #ff79c6;
+}
 
-    .nav-button:hover {
-        background-color: #f0fdf4;
-        border-color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-    }
+.nav-button:hover {
+    background-color: #3b3c5a; /* un poco más claro al hacer hover */
+    border-color: #ff79c6;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #ff79c6, 0 0 20px #ff79c6;
+}
 </style>
 
 <nav class="nav-container">
     <div class="nav-wrapper">
         <div class="logo">
-            incógnita
+            Kit de Documentación Técnica
         </div>
         <ul class="nav-buttons">
-            <li><a href="{% url 'principal' %}" class="nav-button">Principal</a></li>
-            <li><a href="{% url 'login' %}" class="nav-button">Login</a></li>
-            <li><a href="{% url 'creadores' %}" class="nav-button">Creadores</a></li>
-            <li><a href="{% url 'dashboard' %}" class="nav-button">Dashboard</a></li>
+            <li><a href="{% url 'principal' %}" class="nav-button">Infografia</a></li>
+            <li><a href="{% url 'login' %}" class="nav-button">Presentacion</a></li>
+            <li><a href="{% url 'creadores' %}" class="nav-button">Guia Tecnica</a></li>
+            <li><a href="{% url 'dashboard' %}" class="nav-button">Video</a></li>
         </ul>
     </div>
 </nav>

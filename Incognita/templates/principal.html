@@ -1,189 +1,29 @@
 <!doctype html>
 <html lang="es">
 <head>
+  {% load static %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Incógnita</title>
-<style>
-  /* Paleta: verde hoja (#2FA84F) y blanco (#ffffff) */
-:root{
-  --leaf: #2FA84F;
-  --leaf-dark: #238a3f;
-  --white: #ffffff;
-  --muted: #6b7280;
-  --card-bg: #fbfdfb;
-  --radius: 12px;
-  --max-width: 1100px;
-  --container-gap: 28px;
-  --shadow: 0 8px 24px rgba(45, 67, 45, 0.08);
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-}
+  <title>Infografia</title>
+  <style>
+    .main-login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 80px);
+        margin-top: 350px; /* espacio para el navbar */
+    }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--white);
-  padding:32px 18px;
-  display:flex;
-  justify-content:center;
-}
-
-/* Contenedor principal */
-.site{
-  width:100%;
-  max-width:var(--max-width);
-  display:flex;
-  flex-direction:column;
-  gap:40px;
-}
-
-/* HERO */
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  padding:36px;
-  background: linear-gradient(180deg, rgba(47,168,79,0.06), rgba(255,255,255,0));
-  border-radius:var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.title{
-  margin:0 0 10px 0;
-  font-size:clamp(26px, 4.5vw, 40px);
-  color:var(--leaf-dark);
-}
-
-.subtitle{
-  margin:0;
-  color:var(--muted);
-}
-
-/* Hoja decorativa */
-.hero-visual{
-  width:220px;
-  height:220px;
-  display:flex;
-}
-.leaf{
-  width:160px;
-  height:160px;
-  border-radius:50% 50% 40% 60% / 55% 60% 40% 45%;
-  background: linear-gradient(135deg, var(--leaf), #4bd26f);
-  box-shadow: 0 18px 40px rgba(46,125,50,0.15);
-  transform: rotate(-18deg);
-  position:relative;
-}
-.leaf::after{
-  content:"";
-  position:absolute;
-  left:48%;
-  top:10%;
-  width:6px;
-  height:100%;
-  background:rgba(255,255,255,0.4);
-  transform: rotate(12deg);
-}
-
-/* FEATURES */
-.features{
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:var(--container-gap);
-}
-
-.card{
-  background:var(--card-bg);
-  border-radius:12px;
-  padding:20px;
-  box-shadow: 0 8px 20px rgba(20,40,20,0.04);
-}
-.card h3{color:var(--leaf-dark)}
-
-/* CONTACTO */
-.contact{
-  padding:26px;
-  border-radius:12px;
-  background: linear-gradient(180deg, rgba(47,168,79,0.035), rgba(255,255,255,0));
-  box-shadow: var(--shadow);
-}
-
-.contact-form{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.contact-form input,
-.contact-form textarea{
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #e9efe9;
-  flex:1;
-}
-
-.btn{
-  padding:12px;
-  border-radius:10px;
-  font-weight:600;
-  cursor:pointer;
-}
-.btn-primary{
-  background:var(--leaf);
-  color:white;
-}
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  color:var(--muted);
-  padding:12px;
-}
-</style>
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+  </style>
 </head>
 <body>
-  <main class="site">
-    {% include 'navbar.html' %}
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="title">Bienvenido a Incógnita</h1>
-        <p class="subtitle">Diseño limpio, fresco y profesional para tu sitio web.</p>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="leaf"></div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="servicios" class="features">
-      <article class="card">
-        <h3>Diseño Moderno</h3>
-        <p>Interfaz clara y agradable, pensada para usabilidad.</p>
-      </article>
-
-      <article class="card">
-        <h3>Rendimiento</h3>
-        <p>Carga rápida y optimización para móviles y escritorio.</p>
-      </article>
-
-      <article class="card">
-        <h3>Accesibilidad</h3>
-        <p>Estructura inclusiva y semántica bien construida.</p>
-      </article>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>© <span id="year"></span> Incógnita · Todos los derechos reservados</p>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  {% include 'navbar.html' %}
+  <div class="main-login-wrapper">
+    <img src="{% static 'assistance/Cosa.jpg' %}" alt="Sergio">
+  </div>
 </body>
 </html>
